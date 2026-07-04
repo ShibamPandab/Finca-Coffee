@@ -1,0 +1,4 @@
+/* ---- Shop / small-batch roast cards ---- */
+.fc-outline-link:hover{border-color:rgba(237,227,210,.5);background:rgba(237,227,210,.04);}
+.fc-shop-card:hover{transform:translateY(-8px);border-color:color-mix(in srgb,var(--accent) 35%,transparent);}
+.fc-shop-cta:hover{background:var(--accent,#B4C55E);border-color:var(--accent,#B4C55E);color:var(--on-accent);}

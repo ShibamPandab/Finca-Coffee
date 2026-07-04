@@ -1,0 +1,42 @@
+/* ---- Featured Signature Drinks: one-time entrance reveal per chapter (no scroll-scrubbing) ---- */
+  .fc-sig{position:relative;background:#0A0705;}
+  .fc-sig-intro{position:relative;z-index:2;padding:clamp(60px,10vh,110px) clamp(20px,5vw,64px) clamp(36px,5vh,56px);}
+  .fc-sig-label{display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.34em;color:#C9A15F;margin-bottom:14px;}
+  .fc-sig-heading{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,4.6vw,58px);line-height:1;letter-spacing:-.01em;color:#F7F1E6;}
+
+  .fc-sig-card{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:flex-end;}
+  .fc-sig-grain{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
+  .fc-sig-linev{position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(201,161,95,.35) 20%,rgba(201,161,95,.35) 80%,transparent);z-index:4;pointer-events:none;opacity:.7;}
+  .fc-sig-linev-l{left:clamp(20px,5vw,64px);}
+  .fc-sig-linev-r{right:clamp(20px,5vw,64px);}
+  .fc-sig-glow{position:absolute;top:-16%;left:-10%;width:60vw;height:60vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle,rgba(201,161,95,.30) 0%,rgba(201,161,95,.07) 45%,transparent 70%);filter:blur(20px);pointer-events:none;z-index:1;opacity:0;transition:opacity .5s ease .35s;}
+  .fc-sig-card.is-revealed .fc-sig-glow{opacity:1;}
+
+  .fc-sig-media{position:absolute;inset:0;overflow:hidden;}
+  .fc-sig-media-inner{position:absolute;inset:0;opacity:0;scale:.96;transition:opacity .7s cubic-bezier(.16,.84,.44,1),scale .7s cubic-bezier(.16,.84,.44,1);}
+  .fc-sig-card.is-revealed .fc-sig-media-inner{opacity:1;scale:1;}
+  .fc-sig-card:hover .fc-sig-media-inner{transform:scale(1.045);}
+  .fc-sig-media-inner img{width:100%;height:100%;display:block;}
+  .fc-sig-scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,4,2,.86) 0%,rgba(6,4,2,.34) 42%,rgba(6,4,2,.06) 65%,transparent 100%);z-index:2;pointer-events:none;}
+  .fc-sig-content{position:relative;left:0;z-index:3;max-width:clamp(320px,38vw,540px);padding:0 clamp(20px,5vw,64px) clamp(48px,9vh,96px);}
+  .fc-sig-content-inner{opacity:0;translate:0 26px;transition:opacity .65s cubic-bezier(.16,.84,.44,1) .15s,translate .65s cubic-bezier(.16,.84,.44,1) .15s;}
+  .fc-sig-card.is-revealed .fc-sig-content-inner{opacity:1;translate:0 0;}
+  .fc-sig-card:hover .fc-sig-content-inner{transform:translateX(6px);}
+  .fc-sig-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:#0A0705;background:#C9A15F;padding:6px 12px;border-radius:100px;margin-bottom:18px;}
+  .fc-sig-name{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,6vw,84px);line-height:1;letter-spacing:-.01em;color:#F7F1E6;}
+  .fc-sig-note{margin:18px 0 0;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:rgba(247,241,230,.72);}
+  .fc-sig-foot{display:flex;align-items:center;gap:16px;margin-top:26px;}
+  .fc-sig-line{width:34px;height:1px;background:#C9A15F;transition:width .5s cubic-bezier(.16,.84,.44,1);}
+  .fc-sig-card:hover .fc-sig-line{width:56px;}
+  .fc-sig-price{font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.04em;color:#F7F1E6;}
+  .fc-sig-cta{display:inline-flex;align-items:center;gap:8px;margin-top:28px;background:transparent;border:1px solid rgba(247,241,230,.38);color:#F7F1E6;font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;padding:12px 22px;border-radius:100px;text-decoration:none;transition:box-shadow .4s ease,border-color .4s ease,background .4s ease;}
+  .fc-sig-cta:hover{border-color:#C9A15F;background:rgba(201,161,95,.12);box-shadow:0 0 0 1px rgba(201,161,95,.4),0 0 30px 4px rgba(201,161,95,.35);}
+
+  @media (max-width:720px){
+    .fc-sig-content{max-width:calc(100vw - 40px);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .fc-sig-media-inner,.fc-sig-content-inner,.fc-sig-glow{transition:none !important;opacity:1 !important;scale:1 !important;translate:0 !important;}
+    .fc-sig-card:hover .fc-sig-media-inner,.fc-sig-card:hover .fc-sig-content-inner{transform:none !important;}
+  }

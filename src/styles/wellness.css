@@ -1,0 +1,52 @@
+/* ---- Wellness Drinks: premium 35/65 showcase ---- */
+  .fc-wellness{position:relative;isolation:isolate;}
+  .fc-wellness-bg{position:absolute;inset:-2px;overflow:hidden;pointer-events:none;border-radius:inherit;z-index:0;}
+  .fc-wellness-bg::before,.fc-wellness-bg::after{content:'';position:absolute;width:52%;padding-bottom:52%;border-radius:50%;filter:blur(70px);background-color:var(--wg,rgba(201,161,95,.35));transition:background-color .5s ease-out;}
+  .fc-wellness-bg::before{top:-14%;left:-10%;opacity:.4;}
+  .fc-wellness-bg::after{bottom:-18%;right:-8%;opacity:.26;}
+  .fc-wellness-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,48px);align-items:center;}
+
+  .fc-wellness-info{display:flex;flex-direction:column;}
+  .fc-wellness-badge{display:inline-block;align-self:flex-start;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:#241A0E;background:var(--wc,#C9A15F);padding:6px 14px;border-radius:100px;margin-bottom:20px;transition:background-color .5s ease-out;}
+  .fc-wellness-title{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.05;color:var(--ink);transition:opacity .3s ease-out;}
+  .fc-wellness-desc{margin:16px 0 0;font-size:15px;line-height:1.7;color:var(--ink-3);max-width:440px;transition:opacity .3s ease-out;}
+  .fc-wellness-field{margin-top:22px;transition:opacity .3s ease-out;}
+  .fc-wellness-field>span{display:block;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:var(--muted);margin-bottom:6px;}
+  .fc-wellness-field>p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-3);max-width:420px;}
+  .fc-wellness-price-row{display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;}
+  .fc-wellness-price{font-family:'Space Mono',monospace;font-size:19px;color:var(--ink);transition:opacity .3s ease-out;}
+  .fc-wellness-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;padding:13px 24px;border-radius:100px;text-decoration:none;transition:box-shadow .35s ease;}
+  .fc-wellness-cta:hover{box-shadow:0 10px 26px -8px var(--wc,rgba(0,0,0,.4));}
+
+  .fc-wellness-media-col{position:relative;}
+  .fc-wellness-media{position:relative;border-radius:24px;overflow:hidden;min-height:340px;box-shadow:0 44px 90px -30px rgba(0,0,0,.55);background:var(--slot);}
+  .fc-wellness-float{position:absolute;inset:0;animation:fc-wellness-float 7s ease-in-out infinite;transition:transform .3s ease-out;will-change:translate,transform;}
+  @keyframes fc-wellness-float{0%,100%{translate:0 0;}50%{translate:0 -14px;}}
+  .fc-wellness-shot{position:absolute;inset:0;opacity:0;scale:.97;transition:opacity .5s ease-out,scale .5s ease-out;}
+  .fc-wellness-shot.is-active{opacity:1;scale:1;z-index:1;}
+  .fc-wellness-shot img{width:100%;height:100%;display:block;}
+
+  .fc-wellness-circles{margin-top:clamp(28px,4vw,40px);}
+  .fc-wellness-circle{appearance:none;background:none;border:0;font:inherit;cursor:pointer;position:relative;z-index:1;transition:transform .3s cubic-bezier(.16,.84,.44,1);}
+  .fc-wellness-circle:hover{transform:translateY(-3px);}
+  .fc-wellness-swatch{transition:box-shadow .35s ease,transform .35s cubic-bezier(.16,.84,.44,1);}
+  .fc-wellness-circle:hover .fc-wellness-swatch{transform:scale(1.08);}
+  .fc-wellness-circle.is-active .fc-wellness-swatch{transform:scale(1.22);box-shadow:0 0 0 3px rgba(255,255,255,.9),0 0 0 6px var(--wc,rgba(0,0,0,.3)),0 8px 20px -4px var(--wc,rgba(0,0,0,.4));animation:fc-wellness-pulse 2.2s ease-in-out infinite;}
+  @keyframes fc-wellness-pulse{
+    0%,100%{box-shadow:0 0 0 3px rgba(255,255,255,.9),0 0 0 6px var(--wc,rgba(0,0,0,.3)),0 8px 20px -4px var(--wc,rgba(0,0,0,.4));}
+    50%{box-shadow:0 0 0 3px rgba(255,255,255,.9),0 0 0 9px color-mix(in srgb,var(--wc,rgba(0,0,0,.3)) 45%,transparent),0 8px 26px -2px var(--wc,rgba(0,0,0,.4));}
+  }
+
+  @media (min-width:900px){
+    .fc-wellness-grid{grid-template-columns:35fr 65fr;}
+    .fc-wellness-media{min-height:700px;height:100%;}
+  }
+  @media (max-width:899px){
+    .fc-wellness-media-col{order:-1;}
+    .fc-wellness-media{min-height:320px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .fc-menu-row,.fc-menu-row::before,.fc-menu-arrow,.fc-menu-shot,.fc-wellness-shot,.fc-wellness-circle,.fc-wellness-swatch,.fc-menu-float,.fc-wellness-float{transition:none !important;animation:none !important;}
+    .fc-menu-bean{display:none;}
+  }
