@@ -1,14 +1,15 @@
-// Wellness Drinks showcase: click swaps the hero image (cross-dissolve +
-// slight zoom), title/description/ingredients/notes/price, and the ambient
-// background glow color — 500ms ease-out, no page jump. This module only
-// toggles classes/text/custom-properties; every actual transition is a
-// plain CSS transition. Scoped to #menu's wellness block.
+// Wellness Drinks showcase: clicking a selector item swaps the hero image
+// (cross-dissolve + slight zoom), title/description/ingredients/notes/price,
+// and the ambient background glow color — 500ms ease-out, no page jump.
+// Nothing here is tied to scroll; the only motion is what a click triggers.
+// This module only toggles classes/text/custom-properties — every actual
+// transition is a plain CSS transition. Scoped to #menu's wellness block.
 export function initWellness() {
   const section = document.getElementById('menu');
   if (!section) return;
   const hero = section.querySelector('[data-wellness-hero]');
-  const circles = Array.from(section.querySelectorAll('[data-wellness]'));
-  if (!hero || !circles.length) return;
+  const items = Array.from(section.querySelectorAll('[data-wellness]'));
+  if (!hero || !items.length) return;
 
   const shots = Array.from(hero.querySelectorAll('[data-wellness-shot]'));
   const nameEl = hero.querySelector('[data-wellness-name]');
@@ -32,11 +33,15 @@ export function initWellness() {
     if (!slug || slug === active || !INFO[slug]) return;
     active = slug;
     const info = INFO[slug];
-    const circle = circles.find((c) => c.getAttribute('data-wellness') === slug);
-    const priceSrc = circle && circle.querySelector('.fc-wellness-circle-price');
+    const item = items.find((it) => it.getAttribute('data-wellness') === slug);
+    const price = item ? item.getAttribute('data-price') : '';
 
     shots.forEach((s) => s.classList.toggle('is-active', s.getAttribute('data-wellness-shot') === slug));
-    circles.forEach((c) => c.classList.toggle('is-active', c.getAttribute('data-wellness') === slug));
+    items.forEach((it) => {
+      const isActive = it.getAttribute('data-wellness') === slug;
+      it.classList.toggle('is-active', isActive);
+      it.setAttribute('aria-selected', String(isActive));
+    });
     hero.style.setProperty('--wg', info.wg);
     hero.style.setProperty('--wc', info.wc);
 
@@ -48,39 +53,13 @@ export function initWellness() {
       if (notesEl) notesEl.textContent = info.notes;
       if (ingEl) ingEl.textContent = info.ing;
       if (servedEl) servedEl.textContent = info.served;
-      if (priceEl) priceEl.textContent = priceSrc ? priceSrc.textContent : '';
+      if (priceEl) priceEl.textContent = price;
       fadeEls.forEach((el) => { el.style.opacity = '1'; });
     }, 200);
   };
 
-  circles.forEach((c) => {
-    const slug = c.getAttribute('data-wellness');
-    c.addEventListener('click', () => apply(slug));
+  items.forEach((it) => {
+    const slug = it.getAttribute('data-wellness');
+    it.addEventListener('click', () => apply(slug));
   });
-}
-
-// Very gentle parallax on mouse movement over the wellness hero image —
-// mouse-only (skipped on touch), and skipped entirely under
-// prefers-reduced-motion. Sets `transform` on the float layer; the
-// continuous idle-float keyframe (in wellness.css) animates the separate
-// `translate` property on the same element, so the two never fight over
-// one property.
-export function initWellnessParallax() {
-  const media = document.querySelector('#menu [data-wellness-media]');
-  const float = document.querySelector('#menu [data-wellness-float]');
-  if (!media || !float) return;
-  const reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  if (reduced) return;
-  const mq = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)');
-  if (mq && !mq.matches) return;
-
-  const onMove = (e) => {
-    const r = media.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    float.style.transform = 'translate(' + (px * 14).toFixed(1) + 'px,' + (py * 14).toFixed(1) + 'px)';
-  };
-  const onLeave = () => { float.style.transform = 'translate(0,0)'; };
-  media.addEventListener('mousemove', onMove);
-  media.addEventListener('mouseleave', onLeave);
 }

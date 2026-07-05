@@ -528,25 +528,53 @@
       </div>
     </div>
 
-    <div class="fc-wellness" data-wellness-hero data-reveal style="--wg:rgba(201,161,95,.35);--wc:#C9A15F;padding:clamp(30px,3.4vw,44px);border-radius:20px;border:1px solid var(--line-09);overflow:hidden;background:linear-gradient(120deg,var(--panel-a),var(--panel-b));">
+    <div class="fc-wellness" data-wellness-hero style="--wg:rgba(201,161,95,.35);--wc:#C9A15F;padding:clamp(30px,3.4vw,44px);border-radius:20px;border:1px solid var(--line-09);overflow:hidden;background:linear-gradient(120deg,var(--panel-a),var(--panel-b));">
       <div class="fc-wellness-bg" aria-hidden="true"></div>
 
       <div class="fc-wellness-grid">
+        <div class="fc-wellness-selector" role="tablist" aria-label="Choose a wellness drink">
+          <button type="button" class="fc-wellness-item is-active" data-wellness="cinnamon" data-price="7.5 / 8.5" role="tab" aria-selected="true" style="--wc:#C9A15F;">
+            <span class="fc-wellness-dot" style="background:radial-gradient(circle at 35% 30%,#C9A15F,#8A6A38);"></span>
+            <span class="fc-wellness-item-name">Cinnamon<br>Spice Latte</span>
+            <span class="fc-wellness-indicator" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="fc-wellness-item" data-wellness="golden" data-price="7.5 / 8.5" role="tab" aria-selected="false" style="--wc:#E5C15A;">
+            <span class="fc-wellness-dot" style="background:radial-gradient(circle at 35% 30%,#E5C15A,#B08A2A);"></span>
+            <span class="fc-wellness-item-name">Golden Latte</span>
+            <span class="fc-wellness-indicator" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="fc-wellness-item" data-wellness="matcha" data-price="7.5 / 8" role="tab" aria-selected="false" style="--wc:#B7C95E;">
+            <span class="fc-wellness-dot" style="background:radial-gradient(circle at 35% 30%,#B7C95E,#7E9138);"></span>
+            <span class="fc-wellness-item-name">Matcha Latte</span>
+            <span class="fc-wellness-indicator" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="fc-wellness-item" data-wellness="butterfly-pea" data-price="7.5 / 8.5" role="tab" aria-selected="false" style="--wc:#9C86C4;">
+            <span class="fc-wellness-dot" style="background:radial-gradient(circle at 35% 30%,#9C86C4,#645088);"></span>
+            <span class="fc-wellness-item-name">Butterfly Pea Latte</span>
+            <span class="fc-wellness-indicator" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="fc-wellness-item" data-wellness="ginger-beet" data-price="7.5 / 8.5" role="tab" aria-selected="false" style="--wc:#C65C4A;">
+            <span class="fc-wellness-dot" style="background:radial-gradient(circle at 35% 30%,#C65C4A,#8E3626);"></span>
+            <span class="fc-wellness-item-name">Ginger Beet Latte</span>
+            <span class="fc-wellness-indicator" aria-hidden="true"></span>
+          </button>
+        </div>
+
         <div class="fc-wellness-info">
           <span class="fc-wellness-badge">WELLNESS</span>
           <h3 class="fc-wellness-title" data-wellness-name>Cinnamon Spice Latte</h3>
           <p class="fc-wellness-desc" data-wellness-desc>Steamed milk, warm cinnamon, a whisper of nutmeg.</p>
 
           <div class="fc-wellness-field">
-            <span>INGREDIENTS</span>
+            <span>Ingredients</span>
             <p data-wellness-ing>Espresso, milk, cinnamon, nutmeg</p>
           </div>
           <div class="fc-wellness-field">
-            <span>TASTING NOTES</span>
+            <span>Tasting Notes</span>
             <p data-wellness-notes>Warm, spiced, comforting</p>
           </div>
           <div class="fc-wellness-field">
-            <span>BEST SERVED</span>
+            <span>Best Served</span>
             <p data-wellness-served>Hot or iced · 12oz / 16oz</p>
           </div>
 
@@ -558,23 +586,13 @@
 
         <div class="fc-wellness-media-col">
           <div class="fc-wellness-media" data-wellness-media>
-            <div class="fc-wellness-float" data-wellness-float>
-              <div class="fc-wellness-shot is-active" data-wellness-shot="cinnamon"><div id="fc-wellness-cinnamon" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Cinnamon Spice Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Cinnamon Spice Latte</span></div></div>
-              <div class="fc-wellness-shot" data-wellness-shot="golden"><div id="fc-wellness-golden" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Golden Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Golden Latte</span></div></div>
-              <div class="fc-wellness-shot" data-wellness-shot="matcha"><div id="fc-wellness-matcha" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Matcha Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Matcha Latte</span></div></div>
-              <div class="fc-wellness-shot" data-wellness-shot="butterfly-pea"><div id="fc-wellness-butterfly-pea" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Butterfly Pea Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Butterfly Pea Latte</span></div></div>
-              <div class="fc-wellness-shot" data-wellness-shot="ginger-beet"><div id="fc-wellness-ginger-beet" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Ginger Beet Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Ginger Beet Latte</span></div></div>
-            </div>
+            <div class="fc-wellness-shot is-active" data-wellness-shot="cinnamon"><div id="fc-wellness-cinnamon" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Cinnamon Spice Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Cinnamon Spice Latte</span></div></div>
+            <div class="fc-wellness-shot" data-wellness-shot="golden"><div id="fc-wellness-golden" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Golden Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Golden Latte</span></div></div>
+            <div class="fc-wellness-shot" data-wellness-shot="matcha"><div id="fc-wellness-matcha" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Matcha Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Matcha Latte</span></div></div>
+            <div class="fc-wellness-shot" data-wellness-shot="butterfly-pea"><div id="fc-wellness-butterfly-pea" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Butterfly Pea Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Butterfly Pea Latte</span></div></div>
+            <div class="fc-wellness-shot" data-wellness-shot="ginger-beet"><div id="fc-wellness-ginger-beet" class="fc-img-placeholder" style="border-radius:0;" role="img" aria-label="Ginger Beet Latte"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Ginger Beet Latte</span></div></div>
           </div>
         </div>
-      </div>
-
-      <div class="fc-wellness-circles" style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;">
-        <button type="button" class="fc-wellness-circle is-active" data-wellness="cinnamon" style="--wc:rgba(201,161,95,.55);text-align:center;padding:8px;"><div class="fc-wellness-swatch" style="width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C9A15F,#8A6A38);margin:0 auto 12px;"></div><div style="font-size:14px;color:var(--ink-2);line-height:1.25;">Cinnamon<br>Spice Latte</div><div class="fc-wellness-circle-price" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-3);margin-top:8px;">7.5 / 8.5</div></button>
-        <button type="button" class="fc-wellness-circle" data-wellness="golden" style="--wc:rgba(229,193,90,.55);text-align:center;padding:8px;"><div class="fc-wellness-swatch" style="width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E5C15A,#B08A2A);margin:0 auto 12px;"></div><div style="font-size:14px;color:var(--ink-2);line-height:1.25;">Golden<br>Latte</div><div class="fc-wellness-circle-price" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-3);margin-top:8px;">7.5 / 8.5</div></button>
-        <button type="button" class="fc-wellness-circle" data-wellness="matcha" style="--wc:rgba(183,201,94,.55);text-align:center;padding:8px;"><div class="fc-wellness-swatch" style="width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B7C95E,#7E9138);margin:0 auto 12px;"></div><div style="font-size:14px;color:var(--ink-2);line-height:1.25;">Matcha<br>Latte</div><div class="fc-wellness-circle-price" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-3);margin-top:8px;">7.5 / 8</div></button>
-        <button type="button" class="fc-wellness-circle" data-wellness="butterfly-pea" style="--wc:rgba(156,134,196,.55);text-align:center;padding:8px;"><div class="fc-wellness-swatch" style="width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#9C86C4,#645088);margin:0 auto 12px;"></div><div style="font-size:14px;color:var(--ink-2);line-height:1.25;">Butterfly<br>Pea</div><div class="fc-wellness-circle-price" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-3);margin-top:8px;">7.5 / 8.5</div></button>
-        <button type="button" class="fc-wellness-circle" data-wellness="ginger-beet" style="--wc:rgba(198,92,74,.55);text-align:center;padding:8px;"><div class="fc-wellness-swatch" style="width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C65C4A,#8E3626);margin:0 auto 12px;"></div><div style="font-size:14px;color:var(--ink-2);line-height:1.25;">Ginger Beet<br>Latte</div><div class="fc-wellness-circle-price" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-3);margin-top:8px;">7.5 / 8.5</div></button>
       </div>
     </div>
   </div>
