@@ -1,0 +1,13 @@
+/* ---- Why Choose Us: editorial feature blocks (not cards) ---- */
+.fc-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(32px,4vw,56px);}
+.fc-why-block{padding-left:clamp(24px,2.6vw,32px);border-left:1px solid var(--line-08);}
+.fc-why-block:first-child{padding-left:0;border-left:0;}
+.fc-why-number{display:block;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;color:#C9A15F;margin-bottom:22px;}
+.fc-why-heading{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,2.2vw,32px);line-height:1.15;letter-spacing:-.01em;color:var(--ink);}
+.fc-why-desc{margin:16px 0 0;font-size:14.5px;line-height:1.75;color:var(--ink-3);}
+
+@media (max-width:860px){
+  .fc-why-grid{grid-template-columns:1fr;gap:clamp(36px,7vw,48px);}
+  .fc-why-block{padding-left:0;border-left:0;padding-top:clamp(28px,6vw,36px);border-top:1px solid var(--line-08);}
+  .fc-why-block:first-child{padding-top:0;border-top:0;}
+}
